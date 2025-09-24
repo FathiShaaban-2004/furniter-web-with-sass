@@ -1,0 +1,245 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture</title>
+    <link rel="stylesheet" href="sass/style.css">
+    <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.0/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="IMG/logo.png" alt="">
+        </div>
+
+        <div class="search">
+            <input type="search" placeholder="search here">
+            <i class="fa-solid fa-magnifying-glass find"></i>
+        </div>
+
+        <div class="icon">
+
+            <input type="checkbox" id="menu-list" class="hidden-checkbox" >
+            
+            <label for="menu-list">
+                <i class="fa-solid fa-bars-staggered icon-list"></i>
+            </label>
+
+            
+   
+
+    <div class="list">
+
+            <ul>
+            <label for="menu-list" class="close-icon-label">
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+           <li><a href="index.html">home</a></li>
+            <li><a href="shop.html">shop</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="team.html">team</a></li>
+            <li><a href="blog.html">blog</a></li>
+            <li><a href="contact.html">contact</a></li>
+        </ul>
+        </div>
+            
+        <!-- =========================================cart=========================================== -->
+        <input type="checkbox" id="menu-cart"  class="hidden-checkbox-cart">
+        <label for="menu-cart" >
+    <i class="fa-solid fa-cart-shopping"></i>
+    </label>
+
+    
+
+    <div class="cart">
+        <label for="menu-cart"  class="close-icon-label">
+            <i class="fa-solid fa-xmark"></i>
+        </label>
+        <h2>No product found</h2>
+        <hr>
+        <p>Total : 0</p>
+        <button>Checkout cart</button>
+    </div>
+
+
+    <!-- ==========================login================================= -->
+    <input type="checkbox" id="menu-registration" class="hidden-checkbox-registration"> 
+    
+    <label for="menu-registration">
+        <i class="fa-solid fa-user"></i>
+    </label>
+
+
+     <div class="overlay"></div>
+
+     <div class="login">
+        <label for="menu-registration">
+            <i class="fa-solid fa-xmark"></i>
+        </label>
+        <form >
+            <fieldset>
+                <h2>Login Form</h2>
+                <input class="inp_register" type="email" placeholder="Enter Your Email">
+                <input class="inp_register" type="password" placeholder="Enter Your Password" >
+                <span>
+                    Remember Me 
+                    <input type="checkbox">
+                </span>
+                <br>
+                <button>Login Now</button>
+
+                <p>Forget Password ? <a href="#">Click Here</a></p>
+                <p>Don't Have An Account ? <a href="#">Create Account</a></p>
+            </fieldset>
+        </form>
+    </div>
+
+
+    </div>
+
+    </header>
+
+    <div class="header_2">
+        <h2>OUR SHOP</h2>
+        <div class="link_header_shop">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <a href="about.html">About</a>
+        </div>
+    </div>
+
+
+
+    <!-- ====================================main=============================================== -->
+<div class="main_about">
+  <div class="img_about">
+    <!-- <img src="./IMG/background_about.jpg" alt="background_about"> -->
+     <video src="./IMG/true.mp4" autoplay loop muted playsinline></video>
+  </div>
+
+  <div class="content_about">
+    <p class="welcome">Welcome To Our Shop</p>
+    <h3>We Make Your Home More Astonishing</h3>
+    <p class="desc">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam officiis,
+      reiciendis veniam incidunt architecto quam velit dolorum exercitationem
+      cum aliquam ab quas dicta dolores ad earum quas.
+    </p>
+    <p class="desc">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente adipisci
+      totam, nam voluptates quis delectus. Ea quo repudiandae.
+    </p>
+    <button>Read More</button>
+  </div>
+</div>
+
+    <!-- =========================================product============================================== -->
+
+  <section class="service">
+  <div class="title_category">
+    <h2>Our Service</h2>
+    <p><a href="#">View All >></a></p>
+  </div>
+
+  <hr>
+
+  <div class="service_cards">
+    <div class="service_card">
+      <div class="card">
+        <div class="img_service">
+          <img src="./IMG/house_Save.png" alt="seling">
+        </div>
+        <h3>product seling</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, explicabo?</p>
+        <button>read more</button>
+      </div>
+    </div>
+
+    <div class="service_card">
+      <div class="card card_2">
+        <div class="img_service">
+          <img src="./IMG/pen.png" alt="seling">
+        </div>
+        <h3>product seling</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, explicabo?</p>
+        <button>read more</button>
+      </div>
+    </div>
+
+    <div class="service_card">
+      <div class="card card_3">
+        <div class="img_service">
+          <img src="./IMG/call center.png" alt="seling">
+        </div>
+        <h3>product seling</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, explicabo?</p>
+        <button>read more</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- Footer -->
+
+
+    <footer>
+        <div class="container">
+            <div class="content_footer">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><i class="fa-solid fa-arrow-right"></i><a href="index.html">home</a></li>
+                    <li><i class="fa-solid fa-arrow-right"></i><a href="shop.html">shop</a></li>
+                    <li><i class="fa-solid fa-arrow-right"></i><a href="about.html">about</a></li>
+                    <li><i class="fa-solid fa-arrow-right"></i><a href="team.html">team</a></li>
+                    <li><i class="fa-solid fa-arrow-right"></i><a href="blog.html">bold</a></li>
+                    <li><i class="fa-solid fa-arrow-right"></i><a href="#">contact</a></li>
+                </ul>
+            </div>
+
+            
+            <div class="content_footer">
+                <h3>Extra Links</h3>
+                <ul>
+                    <li><i class="fa-solid fa-arrow-right"></i><a href="#">My Order</a></li>
+                    <li><i class="fa-solid fa-arrow-right"></i><a href="#">My Wishlist</a></li>
+                    <li><i class="fa-solid fa-arrow-right"></i><a href="#">My Account</a></li>
+                    <li><i class="fa-solid fa-arrow-right"></i><a href="#">My Favorite</a></li>
+                    <li><i class="fa-solid fa-arrow-right"></i><a href="#">bold</a></li>
+                    <li><i class="fa-solid fa-arrow-right"></i><a href="#">Terms Of User</a></li>
+                </ul>
+            </div>
+
+            
+            <div class="content_footer">
+                <h3>Extra Links</h3>
+                <ul>
+                    <li><i class="fa-brands fa-facebook-f"></i><a href="#">Facebook</a></li>
+                    <li><i class="fa-brands fa-twitter"></i><a href="#">Twitter </a></li>
+                    <li><i class="fa-brands fa-square-instagram"></i><a href="#">Instagram </a></li>
+                    <li><i class="fa-brands fa-square-linkedin"></i><a href="#">LinkedIn </a></li>
+                    <li><i class="fa-brands fa-pinterest"></i><a href="contact.html">Pinterest</a></li>
+                </ul>
+            </div>
+
+
+            <div class="content_footer">
+                <h3>Newsletter</h3>
+                <p>Subscribe For Latest Updates</p>
+                <input type="email" placeholder="enter your email">
+                <button type="submit"> Subscribe </button>
+            </div>
+        </div>
+    </footer>
+
+    <div class="end">
+        <p>Created By Code With Fathi Shaaban | All rights reserved</p>
+    </div>
+</body>
+</html>

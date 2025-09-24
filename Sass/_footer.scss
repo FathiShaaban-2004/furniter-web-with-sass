@@ -1,0 +1,138 @@
+@use "globle" as *;
+
+footer{
+    .container{
+        
+             width: 95%;
+             height: auto;
+             background-color: $globalColor;
+             margin: auto;
+             border-radius: 20px;
+        display: flex;
+        justify-content: space-between;
+        padding: 50px;
+
+    .content_footer{
+        h3{
+            color: $FlexibleChair;
+            font-weight: bold;
+            font-size: 25px;
+            margin-bottom: 25px;
+            font-family: $font-stack;
+        }
+        ul{
+            list-style: none;
+
+
+            li{
+                margin: 10px;
+                
+                a{
+                    text-decoration: none;
+                    color: $listColor;
+                    text-transform: capitalize;
+                    margin-left: 15px;
+                    font-size: 18px;
+                    display: inline-block;  
+                    transition: transform 0.3s ease;
+                    // font-family: $font-stack;
+
+                    &:hover{
+                        color: $iconColor;
+                        transform: translateX(10px);
+                    }
+                }
+                i{
+                    color: $iconColor;
+                    
+                }
+                
+            }
+        }
+        p{
+            color: $iconColor ;
+            font-size: 18px;
+            
+        }
+        input{
+            width: 210px;
+            height: 40px;
+            border-radius: 5px;
+            border: 1px solid $iconColor;
+            display: block;
+            margin: 15px 0 15px 0;
+            outline: none;
+            padding-left: 10px;
+        }
+        
+ button {
+      padding: 12px 28px;
+      background-color: #9a6c58;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
+      text-transform: capitalize;
+
+      &:hover {
+        background-color: #7a5341;
+      }
+    }
+  }
+    }
+        
+    }
+
+
+.end{
+    
+    width: 95%;
+    text-align: center;
+    height: 50px;
+    background-color: $globalColor;
+    margin: 30px auto;
+    border-radius: 10px;
+    padding-top: 15px;
+    p{
+        font-style: bold;
+        color: $iconColor;
+    }
+}
+
+
+
+
+@media (max-width: 992px) {
+  footer .container {
+    justify-content: center;
+    gap: 30px;
+  }
+
+  footer .content_footer {
+    width: 45%;
+  }
+}
+
+@media (max-width: 576px) {
+  footer .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer .content_footer {
+    width: 100%;
+    text-align: center;
+  }
+
+  footer .content_footer ul li {
+    justify-content: center;
+  }
+
+  footer .content_footer input,
+  footer .content_footer button {
+    width: 100%;
+  }
+}

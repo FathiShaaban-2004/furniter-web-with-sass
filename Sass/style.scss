@@ -1,0 +1,16 @@
+
+@use "globle" as *;
+@use "header";
+@use "main";
+@use "products";
+@use "footer";
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background-color: #faf7f6;
+}

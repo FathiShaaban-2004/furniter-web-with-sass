@@ -1,0 +1,519 @@
+
+@use "globle" as *;
+
+
+body{
+    position: relative;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    background-color: $globalColor;
+    border-radius: 10px;
+}
+
+
+
+
+.logo{
+    width: 150px;
+    height: 100%;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+
+.search{
+    width: 450px;
+    height:90% ;
+    margin-top: 40px;
+    position: relative;
+    
+
+
+    input{
+        width: 100%;
+        height: 45px;
+        border-radius: 5px;
+        border: 1px solid $NewArrivals;
+        outline: none;
+        caret-color: $arrowColor;
+        padding-left: 10px;
+        &::placeholder{
+            color: $FlexibleChair ;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-style: italic;
+        }
+    }
+        input:not(:placeholder-shown) + i {
+        opacity: 0;
+}
+
+
+
+    i{
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        cursor: pointer;
+        color: $listColor;
+    }
+
+
+    
+}
+
+
+
+.icon{
+    width: 200px;
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $iconColor;
+
+    i{
+        font-size: 25px;
+        cursor: pointer;
+        &:hover{
+        color: $listColor;
+    }
+    }
+
+
+
+    .hidden-checkbox , .hidden-checkbox-cart , .hidden-checkbox-registration {
+    display: none;
+}
+
+
+.list , .cart , .login {
+    position: fixed;
+    top: 50px;
+    right:0; 
+    height: 80vh;
+    width: 350px;
+    background-color: $backgroundList;
+    border-radius: 10px;
+    
+
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    transform: translateX(100%); 
+    transition: transform 0.3s ease-in-out; 
+    z-index: 101; 
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.close-icon-label {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 170px;
+    font-size: 24px;
+    color: #333; 
+}
+
+
+.hidden-checkbox:checked ~ .list , .hidden-checkbox-cart:checked ~ .cart  , .hidden-checkbox-registration:checked ~ .login {
+    transform: translateX(0);
+}
+
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.386);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 100;
+}
+
+.hidden-checkbox:checked ~ .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+        ul{
+            list-style: none;
+            padding: 80px;
+            margin: 0;
+            height: 100%;             
+            display: flex;
+            flex-direction: column;   
+            justify-content: space-evenly; 
+            position: relative;
+            
+            i{
+                position: absolute;
+                top: 20px;
+                left: 110px;
+                color: $listColor;
+
+
+                &:hover{
+                    color: $backgroundLi;
+                    cursor: pointer;
+                }
+            }
+
+
+            li{
+                text-transform: capitalize;
+                font-size: 20px;
+                color: $listColor;
+                text-align: center;
+                padding: 10px;
+
+                a{
+                    text-decoration: none;
+                    color: $listColor;
+
+                    &:hover{
+                        color: $backgroundLi;
+                        cursor: pointer;
+                    
+                }
+                }
+
+        }
+        
+        }
+// ========================================= Cart===============================
+
+.cart {
+
+    padding: 30px;
+
+    i{
+        margin: 20px 0 0 120px;
+        color: $iconColor;
+
+        &:hover{
+            color: $listColor ;
+        }
+    }
+    h2{
+        text-align: center;
+        margin: 90% 0 60% 0 ;
+    }
+    p{
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+   button {
+    position: relative;
+    overflow: hidden; 
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    margin-left: 35%;
+    color: $iconColor;
+    border: 1px solid $iconColor;
+    cursor: pointer;
+    z-index: 1; 
+
+   
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: $listColor; 
+        transition: width 0.4s ease-in-out; 
+        z-index: -1; 
+    }
+
+    &:hover {
+        
+        color: white;
+    
+        background-color: transparent; 
+        
+        &::after {
+            width: 100%;
+        }
+    }
+}
+}
+
+.hidden-checkbox-cart:checked ~  .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+// ==================================login========================================
+
+.login{
+
+    i{
+        margin: 40px 0 0 300px;
+        color: $iconColor;
+
+        &:hover{
+            color: $listColor ;
+        }
+    }
+
+    form{
+        margin-top: 70px;
+        fieldset{
+            height: 350px;
+            width: 90%;
+            margin: auto;
+            border-radius: 10px;
+            padding: 5px;
+
+
+            h2{
+                margin:0 0 10px 30%;
+            }
+            .inp_register{
+                height: 40px;
+                width: 100%;
+                border-radius: 5px;
+                border: 1px solid $iconColor ;
+                margin-bottom: 10px;
+                padding-left: 10px;
+
+                &::placeholder{
+                    color: $iconColor ;
+                }
+            }
+
+            span{
+                input{
+                    cursor: pointer;
+                }
+            }
+
+            button {
+                position: relative;
+                overflow: hidden; 
+                width: 200px;
+                height: 40px;
+                border-radius: 10px;
+                margin: 30px 0 20px 20%;
+                color: $iconColor;
+                border: 1px solid $iconColor;
+                cursor: pointer;
+                font-size: large;
+                z-index: 1; 
+
+   
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: $listColor; 
+        transition: width 0.4s ease-in-out; 
+        z-index: -1; 
+    }
+
+    &:hover {
+        
+        color: white;
+    
+        background-color: transparent; 
+        
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+        }
+    }
+
+}  
+
+p{
+    a{
+        text-decoration: none;
+        font-size: 20px;
+        color: $iconColor;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+}
+.hidden-checkbox-registration:checked ~  .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+// ===================== Responsive: Main Header ===================== //
+
+@media (max-width: 1200px) {
+  header {
+    padding: 0 20px;
+    justify-content: space-between;
+  }
+
+  .search {
+    width: 350px;
+  }
+
+  .icon {
+    width: 150px;
+  }
+}
+
+@media (max-width: 992px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 10px;
+    gap: 10px;
+  }
+
+  .logo {
+    width: 120px;
+    height: auto;
+  }
+
+  .search {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .icon {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    gap: 15px;
+  }
+
+  .search {
+    width: 100%;
+    input {
+      width: 100%;
+    }
+  }
+
+  .icon {
+    i {
+      font-size: 22px;
+    }
+  }
+
+  .logo {
+    width: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  header {
+    padding: 10px;
+  }
+
+  .icon {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .logo {
+    width: 80px;
+  }
+}
+
+
+// ====================================header_shop-====================================================
+
+.header_2{
+    width: 95%;
+    height: 7rem;
+    background-color: #e0cabf;
+    margin: 2.6rem auto;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6rem ;
+
+    h2{
+        color: $FlexibleChair;
+        font-family: $font-stack;
+    }
+
+    a{
+        text-decoration: none;
+        color: $iconColor ;
+        font-size: 1.3rem;
+        font-family: $font-stack;
+    }
+}
+
+// ===================== Responsive: Header 2 (Shop Header) ===================== //
+
+@media (max-width: 1200px) {
+  .header_2 {
+    padding: 0 4rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .header_2 {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 2rem;
+    gap: 1rem;
+    text-align: center;
+
+    h2,
+    a {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header_2 {
+    padding: 1rem;
+    h2,
+    a {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .header_2 {
+    width: 98%;
+    padding: 0.5rem;
+    h2,
+    a {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+
+

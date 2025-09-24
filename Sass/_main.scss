@@ -1,0 +1,492 @@
+
+@use "globle" as *;
+
+
+
+main , .main_about {
+  margin: 60px auto;
+  width: 95%;
+  height: auto;
+  background-color: $globalColor;
+  border-radius: 10px;
+  padding: 20px; 
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+    position: relative; 
+    flex-direction: row-reverse;
+    padding-top: 70px;
+    max-width: 1200px;
+    margin: auto;
+
+   
+    .hero {
+      width: 400px;       
+      max-width: 45%;    
+      height: auto;       
+      object-fit: cover;  
+      display: block;
+    }
+
+   
+    .content {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+
+      p {
+        font-size: 25px;
+        color: $NewArrivals;
+        font-style: italic;
+        margin: 0;
+      }
+
+      h2 {
+        font-size: 50px;
+        color: $FlexibleChair;
+        font-style: italic;
+        margin: 0;
+      }
+
+      span {
+        font-size: 18px;
+        color: $NewArrivals;
+        font-style: italic;
+      }
+
+      // زرار
+      button {
+        position: relative;
+        overflow: hidden;
+        width: 200px;
+        height: 40px;
+        border-radius: 10px;
+        margin-top: 20px;
+        color: $iconColor;
+        border: 1px solid $iconColor;
+        cursor: pointer;
+        font-size: large;
+        z-index: 1;
+        font-style: italic;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 100%;
+          background-color: $FlexibleChair;
+          transition: width 0.4s ease-in-out;
+          z-index: -1;
+        }
+
+        &:hover {
+          color: white;
+          background-color: transparent;
+
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  // ======= responsive=======
+  @media (max-width: 992px) {
+    height: auto;
+
+    .container {
+      gap: 20px;
+
+      .hero {
+        width: 300px;
+        max-width: 60%;
+      }
+
+      .content {
+        width: 100%;
+
+        h2 { font-size: 40px; }
+        p  { font-size: 20px; }
+        span{ font-size: 16px; }
+      }
+    }
+  }
+
+ 
+  @media (max-width: 576px) {
+    padding: 15px;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+    
+      .content { order: 1; width: 100%; }
+      .hero    { order: 2; width: 85%; max-width: 350px; margin-top: 20px; }
+
+      .content {
+        h2 { font-size: 28px; }
+        p  { font-size: 18px; }
+        span{ font-size: 14px; }
+
+        button { margin: 20px auto; }
+      }
+    }
+  }
+}
+
+
+// =======================================================main_about=======================================
+
+.main_about {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 40px;
+  background: #f5ebe6;
+  padding: 40px;
+  border-radius: 20px;
+  flex-wrap: wrap;
+
+  .img_about {
+    width: 40%;
+    aspect-ratio: 16 / 9; 
+    overflow: hidden;
+    border-radius: 20px;
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+  }
+
+  .content_about {
+    width: 50%;
+    min-width: 280px;
+    text-align: left;
+
+    .welcome {
+      font-size: 16px;
+      color: #9a8a82;
+      margin-bottom: 10px;
+      text-transform: capitalize;
+    }
+
+    h3 {
+      font-size: 28px;
+      font-weight: bold;
+      color: $FlexibleChair;
+      margin-bottom: 20px;
+    }
+
+    .desc {
+      font-size: 15px;
+      color: #6c5f59;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 12px 28px;
+      background-color: #9a6c58;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: #7a5341;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .main_about {
+    flex-direction: column;
+    text-align: center;
+
+    .content_about {
+      width: 100%;
+      text-align: center;
+    }
+
+    .img_about {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .content_about {
+    h3 {
+      font-size: 22px;
+    }
+
+    .desc {
+      font-size: 14px;
+    }
+
+    button {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+  }
+}
+
+// ========================================main team===================================
+.parent_team {
+  width: 85%;
+  height: auto;
+  margin: 60px auto;
+
+  .parent_sec {
+    background-color: $globalColor;
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  .sec_team_one {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    justify-content: center;
+
+    .card_team {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid $iconColor;
+      background: #fff;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .team_img{
+        width: 100%;
+        height: 90%;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          // border-radius: 20px;
+          transition: transform 0.5s ease;
+        }
+      }
+
+      .side_icon {
+        position: absolute;
+        top: 30px;
+        left: 10px;
+        width: 50px;
+        height: 80%;
+        background-color: $globalColor;
+        border-radius: 10px;
+        padding-top: 50px;
+
+        // الحالة الافتراضية
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(0);
+        transition: all 0.4s ease;
+
+        div {
+          width: 35px;
+          height: 35px;
+          margin: 10px auto;
+          border-radius: 50%;
+          background-color: #cbb8b0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background-color 0.3s ease, transform 0.3s ease;
+
+          i {
+            font-size: 20px;
+            color: $FlexibleChair;
+            transition: color 0.3s ease;
+          }
+
+          &:hover {
+            background-color: $FlexibleChair;
+
+            i {
+              color: #cbb8b0;
+            }
+            
+
+            .team-info{
+              display: flex;
+            }
+
+          }
+        }
+      }
+
+
+      .team-info{
+        display: flex;
+        height: 10%;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: $globalColor;
+      }
+
+
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+
+        .side_icon {
+          opacity: 1;
+          visibility: visible;
+          transform: translateX(30%);
+        }
+      }
+    
+    }
+  }
+
+  .tow {
+    margin-top: 50px;
+  }
+
+  
+  @media (max-width: 1024px) {
+    .sec_team_one {
+      grid-template-columns: repeat(2, 1fr); 
+    }
+  }
+
+  @media (max-width: 600px) {
+    .sec_team_one {
+      grid-template-columns: 1fr;
+    }
+
+    .card_team {
+      height: 300px; 
+    }
+  }
+}
+
+
+
+// ======================================main contact=================================
+.contact-section {
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  .contact-form {
+    flex: 1 1 45%;
+    background: #f1e9e5;
+    padding: 30px;
+    border-radius: 15px;
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      input,
+      textarea {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #555;
+        background: transparent;
+        padding: 10px 5px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        outline: none;
+      }
+
+      button {
+        background: #8a5c48;
+        color: #fff;
+        border: none;
+        padding: 12px 20px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s ease;
+
+        &:hover {
+          background: #6e4737;
+        }
+      }
+    }
+  }
+
+  .map {
+    flex: 1 1 45%;
+    border-radius: 15px;
+    overflow: hidden;
+    min-height: 400px;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  }
+
+  
+  @media (max-width: 992px) {
+    .contact-form {
+      flex: 1 1 100%;
+    }
+
+    .map {
+      flex: 1 1 100%;
+      min-height: 300px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    margin: 20px auto;
+    .contact-form {
+      padding: 20px;
+      h2 {
+        font-size: 20px;
+      }
+      form {
+        input,
+        textarea {
+          font-size: 14px;
+        }
+        button {
+          font-size: 14px;
+          padding: 10px 15px;
+        }
+      }
+    }
+  }
+}
